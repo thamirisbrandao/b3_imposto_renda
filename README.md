@@ -1,7 +1,7 @@
 # Data analysis
 - Document here the project: b3_imposto_renda
-- Description: Project Description
-- Data Source:
+- Description: Using B3 informations to create a sheat healpful to declarate the Brazilian income tax :)
+- Data Source: 
 - Type of analysis:
 
 Please document the project the better you can.
