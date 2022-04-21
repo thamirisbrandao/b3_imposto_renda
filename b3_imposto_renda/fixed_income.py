@@ -90,5 +90,7 @@ def fixed_income_b3():
     spreadsheet_to_income_tax = merge_fixo.to_excel('../raw_data/files_to_ti/spreadsheet_income_tax.xlsx', index = False)
     return spreadsheet_to_income_tax
 
-if __name__ == "__main__":
-    planilha = fixed_income_b3()
+planilha = fixed_income_b3()
+
+# if __name__ = "__main__":
+#     planilha = fixed_income_b3()
