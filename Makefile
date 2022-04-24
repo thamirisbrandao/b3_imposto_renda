@@ -14,6 +14,9 @@ test:
 	@coverage run -m pytest tests/*.py
 	@coverage report -m --omit="${VIRTUAL_ENV}/lib/python*"
 
+spreadsheet:
+	@ipython b3_imposto_renda/*_income.py
+
 ftest:
 	@Write me
 
