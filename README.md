@@ -19,3 +19,7 @@ ipython fixed_income.py
 ipython variable_income.py
 
 - Go find the spreadsheed in /home/thamirisbrandao/code/thamirisbrandao/b3_imposto_renda/raw_data/files_to_ti directory
+
+# Notes from developer
+
+I used these codes for 2 real cases, however B3 didn't give all the informations about investments in my hole life. There are some investments that I checked on my personal spreadsheet. Althout B3 is uncomplete, these codes were really usefull to create a investment spreadsheet.
