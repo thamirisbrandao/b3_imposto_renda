@@ -3,7 +3,7 @@
 - Description: Using B3 informations to create a sheat healpful to declarate income tax :)
 - Data Source: https://www.investidor.b3.com.br/ 
 -              Follow this steps: Extrato --> Movimentação --> Filtrar: Download all investments per year in an excel planilha
--              Features from B3: Entrada/Saída;	Data;	Movimentação;	Produto;	Instituição;	Quantidade;	Preço unitário;	Valor da Operação
+-              Features from B3: Entrada/Saída Data Movimentação Produto Instituição Quantidade Preço unitário Valor da Operação
 - Data Location: Put all data in raw_data (directory: /home/thamirisbrandao/code/thamirisbrandao/b3_imposto_renda/raw_data), it is a private information
 - Type of analysis: Using python to create an excel spreasheet
 
