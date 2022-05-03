@@ -47,14 +47,12 @@ def fixed_income_quantity():
             quantity_prod.Quantidade[line]
     quantity_prod = quantity_prod.rename(columns={'Quantidade': 'Saldo no Tesouro'})
     quantity_prod = pd.DataFrame(quantity_prod)
-  #  quantity_prod = quantity_prod.drop(columns='index')
     return quantity_prod
 
 def fixed_income_prof_loss():
     df_fixedi = fixed_income()
     df_fixedi_opB = df_fixedi[df_fixedi['Data da compra'] > '20000101'].reset_index()
     df_fixedi_opS = df_fixedi[df_fixedi['Data da venda'] > '20000101'].reset_index()
-
     df_fixedi_opB['Lucro/Prejuízo'] = 0
     for lineS in range(0, len(df_fixedi_opS)):
         for lineB in range(0, len(df_fixedi_opB)):
@@ -70,11 +68,9 @@ def fixed_income_b3():
     quan_prof_loss = pd.concat([quantity_prod, prof_loss_prod]).reset_index()
     prof_loss = quan_prof_loss.groupby(['Produto']).sum().reset_index()
     prof_loss = prof_loss.drop(columns='index')
-
     merge_fixo = pd.merge(df_fixedi, prof_loss, how='left', on='Produto')
     merge_fixo.drop(columns=['index', 'Instituição'], inplace = True)
     merge_fixo = merge_fixo.sort_values(['Produto', 'Data da compra', 'Data da venda'])
-
     merge_fixo['Lucro/Prejuizo'] = ''
     merge_fixo['Saldo Tesouro'] = ''
     for line in range(0, len(merge_fixo)-1):

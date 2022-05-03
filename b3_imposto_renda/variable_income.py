@@ -70,8 +70,16 @@ def vari_quant_prof_loss():
     df_stock_buy = buy_stock.groupby('Produto').sum().reset_index()
     sell_stock = sell_stock.drop(columns=['Data da venda'])
     lucpre_stock = pd.concat([sell_stock, df_stock_buy]).reset_index()
-    df_stock_opB = df_stock_opB.groupby('Produto').sum().reset_index()
-    df_stock_opS = df_stock_opS.groupby('Produto').sum().reset_index()
+    df_stock_opB_q = df_stock_opB[['Produto', 'Quantidade']]
+    df_stock_opB_v = df_stock_opB[['Produto', 'Valor da Operação']]
+    df_stock_opS_q = df_stock_opS[['Produto', 'Quantidade']]
+    df_stock_opS_v = df_stock_opS[['Produto', 'Valor da Operação']]
+    sumQ_stock_opB = df_stock_opB_q.groupby('Produto').sum().reset_index()
+    sumV_stock_opB = df_stock_opB_v.groupby('Produto').sum().reset_index()
+    sumQ_stock_opS = df_stock_opS_q.groupby('Produto').sum().reset_index()
+    sumV_stock_opS = df_stock_opS_v.groupby('Produto').sum().reset_index()
+    df_stock_opB = pd.merge(sumQ_stock_opB, sumV_stock_opB, how='left', on='Produto')
+    df_stock_opS = pd.merge(sumQ_stock_opS, sumV_stock_opS, how='left', on='Produto')
     calcu = []
     for lineB in range(0, len(df_stock_opB)):
         for lineS in range(0, len(df_stock_opS)):
