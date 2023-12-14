@@ -1,6 +1,6 @@
 # Data analysis
 - Document here the project: b3_imposto_renda
-- Description: Using B3 informations to create a sheat healpful to declarate income tax :)
+- Description: Utilizing B3 information to create a sheet that aids in the declaration of income tax :)
 - Data Source: https://www.investidor.b3.com.br/ 
 -              Follow this steps: Extrato --> Movimentação --> Filtrar: Download all investments per year in an excel planilha
 -              Features from B3: Entrada/Saída Data Movimentação Produto Instituição Quantidade Preço unitário Valor da Operação
